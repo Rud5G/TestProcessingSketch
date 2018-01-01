@@ -1,16 +1,26 @@
 int x, y;
-int radius;
+float radius;
+float speed;
+//int mult;
+float maxRadius;
 
 void setup() {
-  background(0, 0, 0);
   size(800, 800, P3D);
   x = width/2;
   y = height/2;
-  radius = 300;
+  radius = 0;
+  maxRadius = 600;
+  speed = 2;
+  
 }
 
 void draw() {
+  background(0, 0, 0);
   noStroke();
   fill(255, 255, 255);
+  
+  radius += speed;
+  radius %= maxRadius;
+  
   ellipse(x, y, radius, radius);
 }
